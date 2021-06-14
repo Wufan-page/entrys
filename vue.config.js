@@ -43,6 +43,7 @@ module.exports = {
           chunks: ['chunk-vendors', 'chunk-common', 'backend']
         }
     },
+    runtimeCompiler: true,
     productionSourceMap: false,
     // css: {
     //     loaderOptions: {

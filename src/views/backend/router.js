@@ -5,16 +5,16 @@ vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/backend/',
-        redirect: {
-            name: 'main'
-        }
+        path: '/backend',
+        component: () => import('./Back.vue'),
+        children: [
+            {
+                path: '/backend/another',
+                name: 'another',
+                component: { template: '<p>another test page</p>' }
+            }
+        ]
     },
-    {
-        path: '/backend/main',
-        name: 'main',
-        component: () => import('./Back.vue')
-    }
 ]
 
 const router = new VueRouter({
